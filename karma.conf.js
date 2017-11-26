@@ -22,6 +22,7 @@ module.exports = function(config) {
     files: [
       'test/get_fields_test.js',
       'assets/top.html',
+      'assets/context.html',
 
       // { pattern: 'assets/top.html', watched: false, included: true, served: true, nocache: true }
       { pattern: 'widget/widget.js', watched: false, included: true, served: true, nocache: true }
@@ -36,7 +37,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'assets/top.html' : ['html2js']
+      'assets/context.html' : ['html2js']
     },
 
 

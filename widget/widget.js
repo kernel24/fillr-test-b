@@ -31,19 +31,19 @@ async function attachObjectToWindow() {
         bubbles: true, 
         cancelable: false })
 
-    window[event.detail.widget] = {
+    window.top[event.detail.widget] = {
         getFields: () => {
             return window.top.widget
         }
     }
     console.log('trigger frames:loaded event')
-    document.dispatchEvent(event) 
+    window.top.dispatchEvent(event) 
 }
 
 async function execute() {
     try {
         await makeObjectFromForm()
-        if (window == window.top) {
+        if (document.title == 'Top Frame') {
             await sortObjectByAscending()
             await attachObjectToWindow()
         } 
