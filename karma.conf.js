@@ -21,8 +21,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test/get_fields_test.js',
-      'assets/top.html',
-      'assets/context.html',
+      'assets/*.html',
 
       // { pattern: 'assets/top.html', watched: false, included: true, served: true, nocache: true }
       { pattern: 'widget/widget.js', watched: false, included: true, served: true, nocache: true }
@@ -66,14 +65,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome_without_security'],
-    
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security', '--allow-running-insecure-content']
-      }
-    },
+    browsers: ['Chrome'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

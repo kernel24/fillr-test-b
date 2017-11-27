@@ -7,13 +7,14 @@ window.top.widget = []
 
 async function makeObjectFromForm() {
     for(const form of document.forms) {
-        for(const element of form.elements) {
-           const key = element.name || elemengt.id
-           const label = [...form.getElementsByTagName('label')]
-           const value = label.find(element => element.htmlFor === key).textContent
-           const object = {}
-           object[key] = value
-           window.top.widget.push(object)
+        for(const element of form.getElementsByTagName('label')) {
+            if(form.elements[element.htmlFor]) {
+                const key = element.htmlFor 
+                const value = element.textContent
+                const object = {}
+                object[key] = value
+                window.top.widget.push(object)
+            }
         }
     }
 }
